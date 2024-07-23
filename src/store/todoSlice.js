@@ -4,14 +4,14 @@ import { v4 } from 'uuid';
 const todoSlice = createSlice({
   name: 'todo',
   initialState: {
-    tasks: [{ id: v4(), content: 'test task', isDone: false }],
+    tasks: [{ id: v4(), content: 'test task',date: Date.now(), isDone: false }],
   },
   reducers: {
     addTask(state, action) {
       const {
-        payload: { content },
+        payload: { content,date },
       } = action;
-      state.tasks.push({ id: v4(), content, isDone: false });
+      state.tasks.push({ id: v4(), content,date, isDone: false });
     },
     removeTask(state, action) {
       const {
