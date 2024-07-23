@@ -9,9 +9,9 @@ const todoSlice = createSlice({
   reducers: {
     addTask(state, action) {
       const {
-        payload: { content,date },
+        payload: { content, date },
       } = action;
-      state.tasks.push({ id: v4(), content,date, isDone: false });
+      state.tasks.push({ id: v4(), content, date, isDone: false });
     },
     removeTask(state, action) {
       const {
@@ -26,8 +26,12 @@ const todoSlice = createSlice({
       state.tasks = state.tasks.map((task) =>
         task.id === id ? { ...task, isDone: !task.isDone } : task
       );
-    },
+    }, //eslint-disable-next-line
+    sortByDate(state, action){
+      state.tasks.sort()
+    }
   },
 });
-export const {addTask, removeTask, setDoneTask} = todoSlice.actions;
+
+export const {addTask, removeTask, setDoneTask, sortByDate} = todoSlice.actions;
 export default todoSlice.reducer;

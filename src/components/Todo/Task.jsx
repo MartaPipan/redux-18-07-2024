@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeTask, setDoneTask } from '../../store/todoSlice';
+import styles from './Todo.module.scss'
 
 const Task = (props) => {
   const {
@@ -10,7 +11,7 @@ const Task = (props) => {
   const handleIsDone = ()=>{dispatch(setDoneTask({id}))}
   const handleRemove = ()=>{dispatch(removeTask({id}))}
   return (
-    <article>
+    <article className={styles.task}>
       <h3>{content}</h3>
       <p>{date}</p>
       <input type="checkbox" checked={isDone} onChange={handleIsDone} />
