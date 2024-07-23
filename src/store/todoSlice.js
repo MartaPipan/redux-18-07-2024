@@ -4,14 +4,14 @@ import { v4 } from 'uuid';
 const todoSlice = createSlice({
   name: 'todo',
   initialState: {
-    tasks: [{ id: v4(), content: 'test task', date: Date.now().toString(), isDone: false }],
+    tasks: [{ id: v4(), content: 'test task', date: new Date().toISOString(), isDone: false }],
   },
-  reducers: {
+ reducers: {
     addTask(state, action) {
       const {
         payload: { content, date },
       } = action;
-      state.tasks.push({ id: v4(), content, date, isDone: false });
+      state.tasks.push({ id: v4(), content, date: new Date(date).toISOString(), isDone: false });
     },
     removeTask(state, action) {
       const {
@@ -27,8 +27,8 @@ const todoSlice = createSlice({
         task.id === id ? { ...task, isDone: !task.isDone } : task
       );
     }, //eslint-disable-next-line
-    sortByDate(state, action){
-      state.tasks.sort()
+   sortByDate(state, action) {
+        state.tasks.sort((task1, task2) => new Date(task1.date) - new Date(task2.date));
     }
   },
 });

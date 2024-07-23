@@ -31,7 +31,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px; // Adiciona espaçamento entre os campos do formulário
-    padding: 0; // Remove espaçamento interno
+    padding-top: 50px; // Remove espaçamento interno
 
     .field {
         padding: 10px; // Adiciona espaçamento interno ao campo
@@ -112,18 +112,18 @@ input[type="text"]:focus,
 input[type="date"]:focus,
 input[type="submit"]:focus {
     outline: none; // Remove a borda de foco padrão
-    box-shadow: 0 0 5px rgba(81, 203, 238, 1); // Adiciona um efeito de sombra ao focar
+  //  box-shadow: 0 0 5px rgba(81, 203, 238, 1); // Adiciona um efeito de sombra ao focar
     border: 1px solid rgba(81, 203, 238, 1); // Muda a cor da borda ao focar
 }
 
 button:active {
     background-color: #004085; // Muda a cor de fundo ao clicar
-    box-shadow: 0 5px #666; // Adiciona um efeito de sombra ao clicar
+  //  box-shadow: 0 5px #666; // Adiciona um efeito de sombra ao clicar
     transform: translateY(4px); // Adiciona um efeito de "pressão" ao clicar
 }
 
 input[type="submit"]:active {
     background-color: #004085; // Muda a cor de fundo ao clicar
-    box-shadow: 0 5px #666; // Adiciona um efeito de sombra ao clicar
+   // box-shadow: 0 5px #666; // Adiciona um efeito de sombra ao clicar
     transform: translateY(4px); // Adiciona um efeito de "pressão" ao clicar
 }

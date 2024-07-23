@@ -11,10 +11,12 @@ const Task = (props) => {
   const handleIsDone = () => { dispatch(setDoneTask({ id })) };
   const handleRemove = () => { dispatch(removeTask({ id })) };
 
+  const formattedDate = new Date(date).toLocaleDateString();
+
   return (
     <article className={styles.task}>
       <h3>{content}</h3>
-      <p>{date}</p>
+      <p>{formattedDate}</p>
       <input type="checkbox" checked={isDone} onChange={handleIsDone} />
       <span onClick={handleRemove}>X</span>
     </article>
