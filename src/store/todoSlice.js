@@ -4,7 +4,7 @@ import { v4 } from 'uuid';
 const todoSlice = createSlice({
   name: 'todo',
   initialState: {
-    tasks: [{ id: v4(), content: 'test task',date: Date.now(), isDone: false }],
+    tasks: [{ id: v4(), content: 'test task', date: Date.now().toString(), isDone: false }],
   },
   reducers: {
     addTask(state, action) {

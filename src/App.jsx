@@ -1,9 +1,9 @@
-import Counter from "./Counter";
+import Todo from "./components/Todo";
 
 function App() {
   return (
     <>
-      <Counter />
+      <Todo />
     </>
   );
 }

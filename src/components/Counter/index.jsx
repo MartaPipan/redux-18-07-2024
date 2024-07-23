@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { add, sub } from '../store/countSlice';
+import { add, sub } from '../../store/countSlice';
 
 const Counter = () => {
   const [step] = useState(5);
@@ -17,3 +17,5 @@ const Counter = () => {
   );
 };
 export default Counter;
+
+
