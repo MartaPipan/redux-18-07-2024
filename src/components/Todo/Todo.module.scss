@@ -1,8 +1,129 @@
+.container {
+    width: 30%;
+    margin: auto; // Para centralizar o contêiner na página
+}
+
+.todoList {
+    color: #295d94;
+
+    h2 {
+        text-align: center; // Centraliza o título da lista de tarefas
+        margin-bottom: 20px; // Adiciona espaçamento inferior ao título
+    }
+
+    button {
+        display: inline-block;
+        margin-bottom: 20px; // Adiciona espaçamento inferior ao botão
+        padding: 0.5rem 1rem; // Adiciona espaçamento interno ao botão
+        background-color: #007bff; // Cor de fundo para o botão
+        color: #fff; // Cor do texto do botão
+        border: none; // Remove borda padrão
+        border-radius: 0.25rem; // Adiciona bordas arredondadas
+        cursor: pointer; // Adiciona cursor de ponteiro
+
+        &:hover {
+            background-color: #0056b3; // Mudança de cor ao passar o mouse
+        }
+    }
+}
+
 .form {
     display: flex;
     flex-direction: column;
+    gap: 20px; // Adiciona espaçamento entre os campos do formulário
+    padding: 0; // Remove espaçamento interno
+
+    .field {
+        padding: 10px; // Adiciona espaçamento interno ao campo
+        border: 1px solid #ccc; // Adiciona borda ao campo
+        border-radius: 0.25rem; // Adiciona bordas arredondadas
+        cursor: pointer; // Adiciona cursor de ponteiro
+    }
+
+    input[type="text"],
+    input[type="date"] {
+        padding: 0.5rem; // Adiciona espaçamento interno aos campos de texto e data
+        border: 1px solid #ccc; // Adiciona borda aos campos
+        border-radius: 0.25rem; // Adiciona bordas arredondadas
+    }
+
+    input[type="submit"] {
+        align-self: flex-start; // Alinha o botão de envio à esquerda
+        padding: 0.5rem 1rem; // Adiciona espaçamento interno ao botão
+        background-color: #007bff; // Cor de fundo para o botão
+        color: #fff; // Cor do texto do botão
+        border: none; // Remove borda padrão
+        border-radius: 0.25rem; // Adiciona bordas arredondadas
+        cursor: pointer; // Adiciona cursor de ponteiro
+
+        &:hover {
+            background-color: #0056b3; // Mudança de cor ao passar o mouse
+        }
+    }
 }
 
 .task {
     display: flex;
+    align-items: center; // Alinha itens ao centro
+    justify-content: space-between; // Distribui espaço entre os itens
+    padding: 1rem; // Adiciona espaçamento interno
+    margin-bottom: 1rem; // Adiciona espaçamento entre as tarefas
+    border: 1px solid #ccc; // Adiciona borda
+    border-radius: 0.25rem; // Adiciona bordas arredondadas
+    background-color: #f9f9f9; // Cor de fundo para a tarefa
+
+    h3 {
+        margin: 0; // Remove margem
+        flex-grow: 1; // Permite que o título ocupe o espaço disponível
+    }
+
+    p {
+        margin: 0; // Remove margem
+        margin-left: 1rem; // Adiciona espaçamento à esquerda do parágrafo
+        flex-shrink: 0; // Impede que o parágrafo encolha
+    }
+
+    input[type="checkbox"] {
+        margin-left: 1rem; // Adiciona espaçamento à esquerda do checkbox
+        flex-shrink: 0; // Impede que o checkbox encolha
+    }
+
+    span {
+        margin-left: 1rem; // Adiciona espaçamento à esquerda do span
+        color: red; // Cor do texto para o span
+        cursor: pointer; // Adiciona cursor de ponteiro
+
+        &:hover {
+            text-decoration: underline; // Sublinhado ao passar o mouse
+        }
+    }
+}
+
+p,
+input,
+form,
+button,
+h2,
+h3 {
+    font-family: Arial, sans-serif; // Define a família de fontes padrão
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="submit"]:focus {
+    outline: none; // Remove a borda de foco padrão
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1); // Adiciona um efeito de sombra ao focar
+    border: 1px solid rgba(81, 203, 238, 1); // Muda a cor da borda ao focar
+}
+
+button:active {
+    background-color: #004085; // Muda a cor de fundo ao clicar
+    box-shadow: 0 5px #666; // Adiciona um efeito de sombra ao clicar
+    transform: translateY(4px); // Adiciona um efeito de "pressão" ao clicar
+}
+
+input[type="submit"]:active {
+    background-color: #004085; // Muda a cor de fundo ao clicar
+    box-shadow: 0 5px #666; // Adiciona um efeito de sombra ao clicar
+    transform: translateY(4px); // Adiciona um efeito de "pressão" ao clicar
 }

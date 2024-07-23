@@ -1,15 +1,16 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeTask, setDoneTask } from '../../store/todoSlice';
-import styles from './Todo.module.scss'
+import styles from './Todo.module.scss';
 
 const Task = (props) => {
   const {
     task: { id, content, isDone, date },
   } = props;
   const dispatch = useDispatch();
-  const handleIsDone = ()=>{dispatch(setDoneTask({id}))}
-  const handleRemove = ()=>{dispatch(removeTask({id}))}
+  const handleIsDone = () => { dispatch(setDoneTask({ id })) };
+  const handleRemove = () => { dispatch(removeTask({ id })) };
+
   return (
     <article className={styles.task}>
       <h3>{content}</h3>
@@ -26,7 +27,7 @@ Task.propTypes = {
     content: PropTypes.string.isRequired,
     isDone: PropTypes.bool,
     date: PropTypes.string,
-  }),
+  }).isRequired,
 };
 
 export default Task;
