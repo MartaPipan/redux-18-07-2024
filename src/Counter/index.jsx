@@ -6,8 +6,8 @@ const Counter = () => {
   const [step] = useState(5);
   const { count } = useSelector((state) => state.count);
   const dispatch = useDispatch();
-  const handleAdd = () => dispatch(add(step));
-  const handleSub = () => dispatch(sub(step));
+  const handleAdd = () => dispatch(add({ step }));
+  const handleSub = () => dispatch(sub({ step }));
   return (
     <div>
           <h2>count: {count}</h2>
